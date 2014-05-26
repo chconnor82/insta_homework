@@ -4,7 +4,7 @@ class Photo < ActiveRecord::Base
   has_many :favorites
   has_many :fans, :through => :favorites, :source => :user
   has_many :comments
-  has_many :responses, :through => :comments, :source => :photo
+  # has_many :responses, :through => :comments, :source => :photo
 
 
 end

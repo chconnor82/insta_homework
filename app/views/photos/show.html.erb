@@ -4,18 +4,29 @@
 
 <dl class="dl-horizontal">
   <dt>Image</dt>
-  <dd><img src= "<%= @photo.image_url %>" width="80"></dd>
+  <dd><img src= "<%= @photo.image_url %>" width="200"></dd>
 
   <dt>Caption</dt>
   <dd><%= @photo.caption %></dd>
 
   <dt>User</dt>
   <dd><%= @photo.user_id %></dd>
-
-  <dt>Comments</dt>
-  <dd><%= @photo.responses %></dd>
-
 </dl>
+
+
+<ul class="media-list">
+  <% @photo.comments.each do |comment| %>
+  <li class="media">
+    <a class="pull-left" href="#">
+      <img class="media-object" src="https://graph.facebook.com/rbetina/picture" alt="...">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">Comment</h4>
+      <%= comment.content %>
+    </div>
+  </li>
+  <% end %>
+</ul>
 
 <form action="http://localhost:3000/create_comment" <div class="form-group">
   <div>

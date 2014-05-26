@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
     @favorite.user_id = params[:user_id]
 
     if @favorite.save
-      redirect_to("http://localhost:3000/photos/<%= @photo_id %>")
+      redirect_to "/photos/#{@favorite.photo_id}", :notice => "Favorite created successfully."
     else
       render 'new'
     end
@@ -29,12 +29,11 @@ class FavoritesController < ApplicationController
 
   def update
     @favorite = Favorite.find(params[:id])
-
     @favorite.photo_id = params[:photo_id]
     @favorite.user_id = params[:user_id]
 
     if @favorite.save
-      redirect_to "/favorites", :notice => "Favorite updated successfully."
+      redirect_to "/photos/#{@favorite.photo_id}", :notice => "Favorite updated successfully."
     else
       render 'edit'
     end
