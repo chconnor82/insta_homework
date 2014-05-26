@@ -12,4 +12,23 @@
   <dt>User</dt>
   <dd><%= @photo.user_id %></dd>
 
+  <dt>Comments</dt>
+  <dd><%= @photo.responses %></dd>
+
 </dl>
+
+<form action="http://localhost:3000/create_comment">
+  <div>
+    <label for="content">Create Comment:</label>
+    <input id="content" type="text" name="content">
+  </div>
+    <div>
+    <input type="hidden" id="photo_id" type="text" name="photo_id" value="<%= @photo.id %>">
+  </div>
+  <div>
+    <input type="hidden" id="user_id" type="text" name="user_id" value="<%= @comment.user_id %>">
+  </div>
+  <div>
+    <input type="submit" value="Create Comment">
+  </div>
+</form>
