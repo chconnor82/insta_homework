@@ -43,6 +43,15 @@ class PhotosController < ApplicationController
     end
   end
 
+  def my_wall
+    @current_user.present?
+      @photos = Photo.all
+      # @photo.user_id = params[:user_id]
+    # else
+    #   redirect_to "/photos", :notice => "no logged in users."
+    # end
+  end
+
   def destroy
     @photo = Photo.find(params[:id])
 

@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Photos</h1>
+</div>
+
+<ul class="media-list">
+
+<% if current_user.present? %>
+
+  <% @photos.each do |user_photo| %>
+  <li class="media">
+
+    <div class="media-body">
+      <h4 class="media-heading">Photo</h4>
+<a href= "<%= @user_photo %>" width="200">
+
+
+    </div>
+
+  <% end %>
+  <% else %>
+  render 'new'
+<% end %>
+</ul>
+<end>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

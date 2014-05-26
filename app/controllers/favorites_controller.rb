@@ -39,6 +39,11 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def my_favorites
+    @favorite = Favorite.find(params[:id])
+    @favorite = @favorite.photo_id
+  end
+
   def destroy
     @favorite = Favorite.find(params[:id])
 

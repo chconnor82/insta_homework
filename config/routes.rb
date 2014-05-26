@@ -54,8 +54,8 @@ Rails.application.routes.draw do
   get('/delete_photo/:id', { :controller => 'photos', :action => 'destroy' })
   #------------------------------
 
-  get('photos/my_wall'), {:controller => 'photos', :action => 'index'})
-  get('/my_favorites'), {:controller => 'favorites', :action => 'index'})
+  get('/my_wall', {:controller => 'photos', :action => 'my_wall'})
+  get('/my_favorites', {:controller => 'favorites', :action => 'my_favorites'})
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

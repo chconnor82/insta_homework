@@ -1,0 +1,10 @@
+<div>
+<ul class="nav navbar-nav navbar-right">
+        <% if current_user.present? %>
+          <a href="/favorites"> <%= @favorite.photo_id %> </a>
+        <% else %>
+          <li><a href="/sign_in">Sign in</a></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
