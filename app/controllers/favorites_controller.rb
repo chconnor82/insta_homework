@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
     @favorite.user_id = params[:user_id]
 
     if @favorite.save
-      redirect_to "/favorites", :notice => "Favorite created successfully."
+      redirect_to("http://localhost:3000/photos/<%= @photo_id %>")
     else
       render 'new'
     end
