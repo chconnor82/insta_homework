@@ -41,12 +41,11 @@
         <li><a href="/favorites">Favorites</a></li>
         <li><a href="/comments">Comments</a></li>
         <li><a href="/photos">Photos</a></li>
-        <li><a href="#">About</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if false %>
-          <li><a href="/users/edit">Oscar the Grouch</a></li>
+        <% if current_user.present? %>
+          <li><a href="/users/edit"><%= current_user.email %></a></li>
           <li><a href="/users/sign_out" data-method="delete">Sign out</a></li>
         <% else %>
           <li><a href="/users/sign_up">Sign up</a></li>
