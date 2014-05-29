@@ -44,8 +44,7 @@ class PhotosController < ApplicationController
   end
 
   def my_wall
-    @current_user.present?
-      @photos = Photo.all
+      @photos = current_user.photos
       # @photo.user_id = params[:user_id]
     # else
     #   redirect_to "/photos", :notice => "no logged in users."
@@ -58,5 +57,9 @@ class PhotosController < ApplicationController
     @photo.destroy
 
     redirect_to "/photos", :notice => "Photo deleted."
+  end
+
+  def my_favorites
+    @photos = current_user.favorite_photos
   end
 end

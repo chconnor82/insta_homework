@@ -40,8 +40,11 @@ class FavoritesController < ApplicationController
   end
 
   def my_favorites
-    @favorite = Favorite.find(params[:id])
-    @favorite = @favorite.photo_id
+     @photos = current_user.favorite_photos
+  #   # @favorite = Favorite.find(params[:id])
+  #   @favorite.photo_id = params[:photo_id]
+  #   @favorite.user_id = current_user.favorite_photos
+
   end
 
   def destroy
