@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new
     @favorite.photo_id = params[:photo_id]
-    @favorite.user_id = params[:user_id]
+    @favorite.user_id = current_user.id
 
     if @favorite.save
       redirect_to "/photos/#{@favorite.photo_id}", :notice => "Favorite created successfully."
@@ -30,7 +30,7 @@ class FavoritesController < ApplicationController
   def update
     @favorite = Favorite.find(params[:id])
     @favorite.photo_id = params[:photo_id]
-    @favorite.user_id = params[:user_id]
+    @favorite.user_id = current_user.id
 
     if @favorite.save
       redirect_to "/photos/#{@favorite.photo_id}", :notice => "Favorite updated successfully."
@@ -39,13 +39,13 @@ class FavoritesController < ApplicationController
     end
   end
 
-  def my_favorites
-     @photos = current_user.favorite_photos
-  #   # @favorite = Favorite.find(params[:id])
-  #   @favorite.photo_id = params[:photo_id]
-  #   @favorite.user_id = current_user.favorite_photos
+  # def my_favorites
+  #    @photos = current_user.favorite_photos
+  # #   # @favorite = Favorite.find(params[:id])
+  # #   @favorite.photo_id = params[:photo_id]
+  # #   @favorite.user_id = current_user.favorite_photos
 
-  end
+  # end
 
   def destroy
     @favorite = Favorite.find(params[:id])

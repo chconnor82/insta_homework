@@ -1,5 +1,7 @@
 <div class="page-header">
-  <h1>Photo #<%= @photo.id %></h1>
+  <h1>Photo #<%= @photo.id %>
+
+  </h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -54,6 +56,6 @@
     <input type="hidden" id="user_id" type="text" name="user_id" value="<%= @photo.user_id %>">
   </div>
   <div>
-    <input type="submit" value="Update Favorite" class="btn btn-primary">
+    <input type="submit" value="Make Favorite" class="btn btn-primary">
   </div>
 </form>

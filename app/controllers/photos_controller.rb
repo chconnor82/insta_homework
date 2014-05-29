@@ -60,6 +60,6 @@ class PhotosController < ApplicationController
   end
 
   def my_favorites
-    @photos = current_user.favorite_photos
+    @photos = current_user.favorites_photos
   end
 end
